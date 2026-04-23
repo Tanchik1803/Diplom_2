@@ -1,0 +1,12 @@
+[WARNING] Неверный тип контента: text/html; charset=utf-8. Ответ может быть не JSON.
+[DEBUG] Тело ответа (первые 500 символов): <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+
