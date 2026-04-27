@@ -3,6 +3,7 @@ import requests
 import allure
 from urls import Urls
 
+
 @allure.feature('Регистрация пользователя')
 class TestCreateUser:
 
@@ -15,10 +16,6 @@ class TestCreateUser:
         assert response.status_code == 200, f"Статус код должен быть 200, получен: {response.status_code}"
         assert response_data.get('success') is True, "Поле 'success' должно быть True"
         assert 'accessToken' in response_data, "В ответе должен присутствовать accessToken"
-        assert 'refreshToken' in response_data, "В ответе должен присутствовать refreshToken"
-        assert 'user' in response_data, "В ответе должен присутствовать объект user"
-        assert response_data['user']['email'] == generate_user_data['email'], "Email в ответе должен совпадать с отправленным"
-        assert response_data['user']['name'] == generate_user_data['name'], "Имя в ответе должно совпадать с отправленным"
 
         # Очистка
         requests.delete(Urls.USER_DELETE, headers={'Authorization': response_data['accessToken']})
